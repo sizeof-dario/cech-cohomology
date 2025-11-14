@@ -1,0 +1,46 @@
+\documentclass{beamer}
+%Information to be included in the title page:
+
+\usetheme{Warsaw}
+
+\usefonttheme[onlymath]{serif}
+
+\title{Coomologia di Čech}
+
+\author{Dario Di Meo, D70000023}
+
+
+\date{Esame di Geometria Algebrica, XX/12/25}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Definizioni 1}
+
+\begin{block}{Definizione (Complesso simpliciale astratto)}
+Siano un insieme $\mathrm{Vert}(K)\ne\emptyset$ e una famiglia di suoi sottoinsiemi $\mathcal{S}_K\subseteq\mathcal{P}(\mathrm{Vert}(K))\setminus\{\emptyset\}$ tali che
+\begin{itemize}
+    \item $\{v\}\in\mathcal{S}_K$ per ogni $v\in\mathrm{Vert}(K)$;
+    \item $\sigma\in\mathcal{S}_K\wedge\emptyset\ne\tau\subseteq\sigma\Rightarrow\tau\in\mathcal{S}_K$.
+\end{itemize}
+Allora $K=(\mathrm{Vert}(K),\mathcal{S}_K)$ si dice \alert{complesso simpliciale astratto}, gli elementi di $\mathrm{Vert}(K)$ si dicono \alert{vertici} e gli elementi di $\mathcal{S}$ si dicono \alert{simplessi}. 
+\end{block}
+
+Un simplesso $\sigma$ tale che $|\sigma|=n+1$ si dice $n$-simplesso.
+
+Se $K$ e $L$ sono complessi simpliciali, una funzione $\varphi:\mathrm{Vert}(K)\rightarrow\mathrm{Vert}(L)$ tale che $\sigma\in\mathcal{S}_K\Rightarrow\varphi(\sigma)\in\mathcal{S}_L$ per ogni $\sigma\in\mathcal{S}_K$ si dice \alert{mappa simpliciale}.
+\end{frame}
+
+\begin{frame}
+\frametitle{Definizioni 2}
+
+\begin{block}{Definizione (Nerbo)}
+    Siano $X$ uno spazio topologico e $\mathcal{U}=(U_I)_{i\in I}$ un suo ricoprimento aperto. Si chiama \alert{nerbo} il complesso simpliciale astratto $N(\mathcal{U})$ di vertici $\mathrm{Vert}(\mathcal{U})=\mathcal{U}$ e simplessi le sottofamiglie $\{U_{i_0},U_{i_1}\ldots,U_{i_n}\}\subseteq\mathcal{U}$ tali che $\bigcap_{j=0}^nU_{n_j}\ne\emptyset$, al variare di $n\in\mathbb{N}_0$.
+\end{block}
+
+
+\end{frame}
+
+\end{document}
