@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath, amsthm, amssymb}
+
+% ambiente teorema
+\newtheorem{teorema}{Teorema}
+\newtheorem{lemma}{Lemma}
+\newtheorem{exercise}{Esercizio}
+
+\begin{document}
+
+Il teorema di riferimento sarà il seguente:
+\begin{teorema}[Corollario 6.49]
+    Siano $\mathcal{A}$ e $\mathcal{B}$ due categorie abeliane di cui la prima con abbastanza iniettivi e siano $(F^n,G^n:\mathcal{A}\rightarrow\mathcal{B})_{n\in\mathbb{N}_0}$ due successioni di funtori covarianti additivi tra esse. Si supponga che:
+    \begin{enumerate}
+        \item Per ogni successione esatta corta $0\longrightarrow A\longrightarrow B\longrightarrow C\longrightarrow 0$, esiste una successione esatta lunga dotata di omomorfismi naturali di collegamento;
+        \item  $F^0$ è naturalmente isomorfo a $G^0$;
+        \item $F^n(E)=0=G^n(E)$ per tutti gli oggetti iniettivi $E$ e per ogni $n\geq 1$.
+    \end{enumerate}
+    Allora $F^n$ è naturalmente isomorfo a $G^n$ per ogni $n\in\mathbb{N}_0$.
+\end{teorema}
+
+Per il punto 1 abbiamo (per Čech):
+\begin{teorema}[Serre, teorema 6.87]
+    Sia $0\longrightarrow\mathcal{F}'\longrightarrow\mathcal{F}\longrightarrow\mathcal{F}''\longrightarrow0$ una successione esatta corta di fasci di gruppi abeliani su uno spazio paracompatto. Allora esiste una successione esatta nella coomologia di Čech:
+    \[
+\begin{aligned}
+0 \to \check{H}^0(\mathcal{F}') &
+   \to \check{H}^0(\mathcal{F}) 
+   \to \check{H}^0(\mathcal{F}'') \\
+  &\to \check{H}^1(\mathcal{F}') 
+   \to \check{H}^1(\mathcal{F}) 
+   \to \check{H}^1(\mathcal{F}'') 
+   \to \cdots \\
+  &\to \check{H}^q(\mathcal{F}') 
+   \to \check{H}^q(\mathcal{F}) 
+   \to \check{H}^q(\mathcal{F}'') 
+   \to \check{H}^{q+1}(\mathcal{F}') 
+   \to \cdots \,.
+\end{aligned}
+\]
+\end{teorema}
+Per il punto 2 abbiamo (per Čech):
+\begin{exercise}[6.79(i)]
+    Siano $X$ uno spazio topologico, $\mathcal{U}$ un suo ricoprimento aperto e $\mathcal{F}$ un fascio di gruppi abeliani su $X$. Allora:
+    $$\boxed{\check{H}^0(\mathcal{U},\mathcal{F})=\Gamma(\mathcal{F})=\mathcal{F}(X)}$$
+    (a cui è uguale anche $H^0(\mathcal{F})$).
+\end{exercise}
+
+Per il punto 3 abbiamo (per Čech):
+\begin{lemma}[6.85]
+    Sia $X$ uno spazio topologico e sia $\mathcal{F}$ un fascio di gruppi abeliani su $X$. Se $\mathcal{F}$ è iniettivo, allora, per ogni $q\geq 1$:
+    $$\check{H}^q(\mathcal{F})=\{0\}$$
+\end{lemma}
+
+\begin{teorema}
+Siano $X$ uno spazio topologico e $\mathcal{F}$ un fascio di gruppi abeliani su $X$. Se $X$ è paracompatto, allora, per ogni $q\in\mathbb{N}_0$:
+$$\check{H}^q(\mathcal{F})\cong H^q(\mathcal{F})$$
+\end{teorema}
+
+\end{document}
