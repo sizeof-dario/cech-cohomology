@@ -95,13 +95,14 @@
         \pause
         Sia $\mathcal{U}$ un ricoprimento aperto di $X$. \pause
         
-        Si dice \textbf{nervo}, e si indica con $N(\mathcal{U})$, il complesso simpliciale astratto i cui vertici sono gli aperti del ricoprimento: $\Vertk(N(\mathcal{U}))=\mathcal{U}$, \pause e i cui simplessi sono le sottofamiglie finite di $\mathcal{U}$ a intersezione non vuota:
-    $$\mathcal{S}=\Bigg\{(U_{i_0},U_{i_1},...,U_{i_n}):n\in\mathbb{N}_0\wedge\bigcap_{j=0}^nU_{i_j}\ne\emptyset\Bigg\}$$
+        Si dice \textbf{nervo}, e si indica con $N(\mathcal{U})$, il complesso simpliciale astratto i cui vertici sono gli aperti di $\mathcal{U}$: $\Vertk(N(\mathcal{U}))=\mathcal{U}$, \pause e i cui simplessi sono le sottofamiglie finite di aperti a intersezione non vuota:
+    $$\Sigma=\Bigg\{(U_{i_0},U_{i_1},...,U_{i_n})\in\mathcal{P}(\mathcal{U})\mid n\in\mathbb{N}_0\wedge\bigcap_{j=0}^nU_{i_j}\ne\emptyset\Bigg\}$$
     \end{definition}
 \end{frame}
 
 \begin{frame}
     Fissiamo un fascio su $X$ di gruppi abeliani $\mathcal{F}$.
+    \pause
     \begin{definition}[Complesso dei gruppi di cocatene]
         \pause
         Definiamo la seguente successione di gruppi e omomorfismi
@@ -112,7 +113,7 @@
         \pause
         e, presa $f:\Sigma_q\rightarrow\bigcup_{\sigma\in\Sigma_q}\mathcal{F}\left(\bigcap\sigma\right)$ in $C^q(\mathcal{U},\mathcal{F})$:
         
-        $$\delta^q(f)=\left(\sigma\in\Sigma_{q+1}\mapsto\sum_{i=0}^{q+1}(-1)^i f\left(\hat{\sigma}^i\right)\in\bigcup_{\sigma\in\Sigma_{q+1}}\mathcal{F}\left(\bigcap\sigma\right)\right)$$
+        $$\delta^q(f)=\left(\sigma\in\Sigma_{q+1}\mapsto\sum_{i=0}^{q+1}(-1)^i f\left(\hat{\sigma}^i\right)\in\bigcup_{\tau\in\Sigma_{q+1}}\mathcal{F}\left(\bigcap\tau\right)\right)$$
     
         in $C^{q+1}(\mathcal{F},\mathcal{U})$.
     \end{definition}
@@ -167,12 +168,12 @@
 
 \begin{frame}
     
-    \begin{definition}[Limite diretto] % insertion morfisms
+    \begin{definition}[Limite diretto]
         \pause
         Siano $(I,\preceq)$ un poset, $\mathcal{C}$ una categoria e $\{M_i,\varphi^i_j\}$ diretto in $\mathcal{C}$. 
         \pause
         
-        Il \textbf{limite diretto} è una coppia costituita da un oggetto $\varinjlim M_i$ e da una famiglia $(\alpha_i)_{i\in I}\subseteq (\varinjlim M_i)^{M_i}$ di \textbf{insertion morfisms} tali che
+        Il \textbf{limite diretto} è una coppia costituita da un oggetto $\varinjlim M_i$ e una famiglia $(M_i\xrightarrow{\alpha_i}\varinjlim M_i)_{i\in I}$ di \textbf{insertion morphisms} tali che
         \begin{enumerate}[i]
             \pause
             \item $\varphi^i_j\cdot\alpha_j=\alpha_i$ quando $i\preceq j$;
@@ -220,9 +221,9 @@
 %        Una categoria $\mathcal{C}$ si dice \textbf{cocompleta} se il limite diretto esiste per ogni sistema diretto in $\mathcal{C}$.
 %    \end{definition}
 %    \pause
+\pause
     \begin{block}{Proposizione}
-    \pause
-    Siano $\mathcal{K}$ una classe diretta, $\mathcal{C}$ una categoria \textit{cocompleta} e $\{A_k,\varphi^k_j\}$ un sistema diretto in $\mathcal{C}$ su $\mathcal{K}$. \pause Se due sottoclassi di $\mathcal{K}$, siano esse $\mathcal{L}$ e $\mathcal{M}$, sono insiemi e \textbf{cofinali} in $\mathcal{K}$, allora
+    Siano $\mathcal{K}$ una classe diretta, $\mathcal{C}$ una categoria \textbf{cocompleta} e $\{A_k,\varphi^k_j\}$ un sistema diretto in $\mathcal{C}$ su $\mathcal{K}$. \pause Se due sottoclassi di $\mathcal{K}$, siano esse $\mathcal{L}$ e $\mathcal{M}$, sono insiemi e \textbf{cofinali} in $\mathcal{K}$, allora
     $$\boxed{\varinjlim\nolimits_\mathcal{L}A_k\cong\varinjlim\nolimits_\mathcal{M}A_k}$$
     \end{block}
 \end{frame}
@@ -290,9 +291,9 @@
         \begin{enumerate}
             \item Per ogni successione esatta corta
             $0\rightarrow\mathcal{F}\rightarrow\mathcal{G}\rightarrow\mathcal{H}\rightarrow0$
-            ci siano due successioni esatte lunghe con natural connecting homomorphisms:
-            {\scriptsize $$\cdots\rightarrow H^{q-1}(\mathcal{H})\xrightarrow{\Delta_{q-1}}H^q(\mathcal{F})\rightarrow H^q(\mathcal{G})\rightarrow H^q(\mathcal{H})\xrightarrow{\Delta_q}H^{q+1}(\mathcal{F})\rightarrow\cdots$$
-            $$\cdots\rightarrow \check{H}^{q-1}(\mathcal{H})\xrightarrow{\Delta'_{q-1}}\check{H}^q(\mathcal{F})\rightarrow \check{H}^q(\mathcal{G})\rightarrow \check{H}^q(\mathcal{H})\xrightarrow{\Delta'_q}\check{H}^{q+1}(\mathcal{F})\rightarrow\cdots$$}
+            ci siano due successioni esatte lunghe:
+            {\small $$\cdots\rightarrow H^{q-1}(\mathcal{H})\rightarrow H^q(\mathcal{F})\rightarrow H^q(\mathcal{G})\rightarrow H^q(\mathcal{H})\rightarrow H^{q+1}(\mathcal{F})\rightarrow\cdots$$
+            $$\cdots\rightarrow\check{H}^{q-1}(\mathcal{H})\rightarrow\check{H}^q(\mathcal{F})\rightarrow\check{H}^q(\mathcal{G})\rightarrow\check{H}^q(\mathcal{H})\rightarrow\check{H}^{q+1}(\mathcal{F})\rightarrow\cdots$$}
             \pause
             \item $H^0$ sia naturalmente isomorfo a $\check{H}^0$;
             \pause
@@ -317,7 +318,7 @@
 \begin{frame}
     \begin{theorem}
         Sia $0\rightarrow \mathcal{F}\rightarrow\mathcal{G}\rightarrow\mathcal{H}\rightarrow 0$ è una successione esatta corta di fasci su uno spazio paracompatto. \pause Allora esiste una successione esatta
-        $$0\rightarrow\check{H}^0(\mathcal{F})\rightarrow\check{H}^0(\mathcal{G})\rightarrow\check{H}^0(\mathcal{H})\xrightarrow{\Delta'_0}\check{H}^1(\mathcal{F})\rightarrow\cdots$$ 
+        $$0\rightarrow\check{H}^0(\mathcal{F})\rightarrow\check{H}^0(\mathcal{G})\rightarrow\check{H}^0(\mathcal{H})\rightarrow\check{H}^1(\mathcal{F})\rightarrow\cdots$$ 
     \end{theorem}
     \pause
     \begin{block}{Lemma}
